@@ -1,0 +1,18 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-pod
+spec:
+  containers:
+    - name: httpdcon
+      image: httpd
+      ports:
+        - containerPort: 80
+    - name: mysqlcon
+      image: mysql:5.7
+      ports:
+        - containerPort: 3306
+      env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: 'thugsofmpl'
